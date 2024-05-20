@@ -1,0 +1,106 @@
+﻿<Window x:Class="Pr_magazin.adminprofile"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:Pr_magazin"
+        mc:Ignorable="d"
+        WindowState="Maximized"  MinHeight="900" MinWidth="1570"
+        Title="Fast-Shop" Height="1080" Width="1920">
+    <ScrollViewer VerticalScrollBarVisibility="Auto">
+
+        <Grid Background="#232628">
+
+            <StackPanel Width="1100" Height="30" Background="#232628" VerticalAlignment="Top" HorizontalAlignment="Center" Margin="15">
+                <Grid>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="*"/>
+                        <ColumnDefinition Width="Auto"/>
+                    </Grid.ColumnDefinitions>
+                    <TextBox  x:Name="SearchTextBox" Foreground="Black" HorizontalContentAlignment="Left" VerticalContentAlignment="Center" Width="1100" Height="30" HorizontalAlignment="Right" Grid.ColumnSpan="2" Margin="0,0,-13,0">
+                        <TextBox.Resources>
+                            <Style TargetType="{x:Type Border}">
+                                <Setter Property="CornerRadius" Value="10"/>
+                            </Style>
+                        </TextBox.Resources>
+                    </TextBox>
+                    <Button HorizontalAlignment="Right" Click="poisk" Background="White"  >
+                        <Image Source="Image/search.png" Width="20" Height="10"/>
+                    </Button>
+                </Grid>
+            </StackPanel>
+
+            <Grid HorizontalAlignment="Right" VerticalAlignment="Top" Width="153" Height="50" Margin="0,10,10,0">
+                <Button Background="CadetBlue" Click="Button_Click"  Width="40" Height="40" VerticalAlignment="Top" HorizontalAlignment="Center"  >
+
+                    <Button.Resources>
+                        <Style TargetType="Border">
+                            <Setter Property="CornerRadius" Value="10"/>
+                        </Style>
+                    </Button.Resources>
+                    <Image  Source="Image/korzina.png"></Image>
+                </Button>
+                <Button Background="#232628" Click="Button_Click_1"  Width="40" Height="40" VerticalAlignment="Top" HorizontalAlignment="Right" ClipToBounds="True">
+                    <Button.Content>
+                        <Image x:Name="imageControl" Stretch="Fill"/>
+                    </Button.Content>
+                </Button>
+            </Grid>
+
+            <StackPanel Background="CadetBlue" Width="150" Orientation="Vertical" HorizontalAlignment="Left">
+
+                <TextBlock Text="Fast-Shop" Foreground="White" FontSize="30" FontFamily="Ink Free" VerticalAlignment="Center" HorizontalAlignment="Center" Margin="10"></TextBlock>
+
+                <Menu Height="450" Background="Transparent" >
+                    <Menu.ItemsPanel>
+                        <ItemsPanelTemplate>
+                            <VirtualizingStackPanel Orientation="Vertical"></VirtualizingStackPanel>
+                        </ItemsPanelTemplate>
+                    </Menu.ItemsPanel>
+
+                    <MenuItem Header="Главная"  Click="MenuItem_Click"  Foreground="White" FontSize="20" FontFamily="Ink Free"   Width="150" Margin="10" >
+                        <MenuItem.Icon>
+                            <Image  Source="Image/home.png"  ></Image>
+                        </MenuItem.Icon>
+                    </MenuItem>
+                    <MenuItem Header="Добавить" Click="MenuItem_Click_1" Foreground="White" FontSize="20" FontFamily="Ink Free"  Width="150" Margin="8">
+                    </MenuItem>
+
+                    <MenuItem Header="Изменить" Click="MenuItem_Click_2"  Foreground="White" FontSize="20" FontFamily="Ink Free"   Width="150" Margin="10">
+                       
+                    </MenuItem>
+                    <MenuItem Header="Удалить" Click="MenuItem_Click_3"   Foreground="White" FontSize="20" FontFamily="Ink Free"   Width="150" Margin="10">
+                    </MenuItem>
+                </Menu>
+            </StackPanel>
+            <Canvas Width="1200" Height="350" VerticalAlignment="Top" HorizontalAlignment="Center">
+
+                <TextBlock Canvas.Top="70" Canvas.Left="490"  FontSize="45" Background="#232628" Foreground="White" FontFamily="Ink Free">Fast shop for you</TextBlock>
+                <StackPanel Background="CadetBlue" Canvas.Top="140" Canvas.Left="240" Width="760" Orientation="Horizontal">
+                    <ComboBox x:Name="BrandComboBox"   Width="120" Margin="5">
+                        <ComboBoxItem Content="Nike"/>
+                        <ComboBoxItem Content="Guess"/>
+                    </ComboBox>
+                    <ComboBox x:Name="genderComboBox" Width="120" Margin="5">
+                        <ComboBoxItem Content="Мужской"/>
+                        <ComboBoxItem Content="Женский"/>
+                    </ComboBox>
+                    <ComboBox x:Name="SizeComboBox" Width="120" Margin="5" >
+                        <ComboBoxItem Content="48"/>
+                        <ComboBoxItem Content="42"/>
+                        <ComboBoxItem Content="38"/>
+                    </ComboBox>
+                    <ComboBox x:Name="ColorComboBox" Width="120" Margin="5">
+                        <ComboBoxItem Content="Черный"/>
+                        <ComboBoxItem Content="Белый"/>
+                    </ComboBox>
+                    <Button Content="Сортировать" Width="100" Margin="5" Click="sortirovat"/>
+                    <Button Content="Сбросить фильтры" Width="120" Margin="5" Click="sbros"/>
+                </StackPanel>
+            </Canvas>
+            <Canvas x:Name="tovar" Width="1400" Height="2000"  VerticalAlignment="Bottom" HorizontalAlignment="Center"></Canvas>
+        </Grid >
+    </ScrollViewer>
+</Window>
+
+

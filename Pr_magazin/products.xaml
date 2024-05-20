@@ -1,0 +1,43 @@
+﻿<UserControl x:Class="Pr_magazin.products"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:Pr_magazin"
+             mc:Ignorable="d" 
+             d:DesignHeight="450" d:DesignWidth="800">
+    <Canvas Width="350" Height="450" Background="CadetBlue" HorizontalAlignment="Stretch" Margin="90,40,0,0">
+        <Canvas.Effect>
+            <DropShadowEffect Color="White" ShadowDepth="1" Opacity="15"/>
+        </Canvas.Effect>
+        <Canvas.Resources>
+            <Style TargetType="TextBlock">
+                <Setter Property="FontFamily" Value="Ink Free"/>
+                <Setter Property="Foreground" Value="White"/>
+                <Setter Property="FontSize" Value="16"/>
+                <Setter Property="Width" Value="130"/>
+                <Setter Property="Height" Value="16"/>
+            </Style>
+        </Canvas.Resources>
+        <Canvas Width="300" Height="450" Canvas.Left="25" Background="CadetBlue" RenderTransformOrigin="0.5,0">
+            <Image x:Name="tovar" Canvas.Left="35" Canvas.Top="5" Height="225" Width="225" RenderTransformOrigin="0.5,0.5" Source="https://www.professionalsport.ru/spree/products/000/044/995/original/67XUU716-71.jpg?1486376085"/>
+            <TextBlock   Canvas.Top="250">Имя:</TextBlock>
+            <TextBlock  VerticalAlignment="Bottom" HorizontalAlignment="Center" Canvas.Top="270">Цвет:</TextBlock>
+            <TextBlock  VerticalAlignment="Bottom" HorizontalAlignment="Center" Canvas.Top="290">Размер:</TextBlock>
+            <TextBlock  VerticalAlignment="Bottom" HorizontalAlignment="Center" Canvas.Top="310">Пол:</TextBlock>
+            <TextBlock  VerticalAlignment="Bottom" HorizontalAlignment="Center" Canvas.Top="330">Бренд:</TextBlock>
+
+            <TextBlock x:Name="NameTextBlock" Width="170" Height="16"  Canvas.Top="250" Canvas.Left="80"/>
+            <TextBlock   Canvas.Top="350">Цена:</TextBlock>
+            <TextBlock x:Name="ColorTextBlock"   Canvas.Top="270" Canvas.Left="80"/>
+            <TextBlock x:Name="SizeTextBlock"   Canvas.Top="290" Canvas.Left="80"/>
+            <TextBlock x:Name="GenderTextBlock"   Canvas.Top="310" Canvas.Left="80"/>
+            <TextBlock x:Name="BrendTextBlock"   Canvas.Top="330" Canvas.Left="80"/>
+            <TextBlock x:Name="priceTextBlock"   Canvas.Top="350" Canvas.Left="80"/>
+
+            <Button x:Name="rotate90Button2" Click="rotate90Button2_Click" Width="300" Height="35" Canvas.Bottom="7" Canvas.Top="400" Background="#232628">
+                <TextBlock FontSize="15">Добавить в корзину</TextBlock>
+            </Button>
+        </Canvas>
+    </Canvas>
+</UserControl>
